@@ -1,0 +1,20 @@
+<template name="user">
+<div class="container">
+  
+  <div class="row users">
+    <div class="col-xs-12">
+      <h4>{{username}}</h4>
+      <p>joined: <em>{{createdAt}}</em></p>
+    </div>
+  </div>
+
+  {{#if is_loggedin_user}}
+  <div class="row">
+    <div class="col-xs-12">
+      <button type="button" class="btn btn-primary">Edit Profile</button> 
+    </div>
+  </div>
+  {{/if}}
+  
+</div>
+</template>

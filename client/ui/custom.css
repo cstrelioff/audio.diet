@@ -1,0 +1,36 @@
+/*
+ * client/ui/custom.css
+ *
+ * Copyright (C) 2016 Christopher C. Strelioff
+ *
+ * Distributed under terms of the MIT license.
+ */
+.data {
+  border-left: 3px solid lightgray;
+  margin: 10px 0px;
+}
+
+.nav-a {
+  padding: 0px 2px;
+}
+
+.nav-crumbs {
+  margin: 0px 0px 10px 0px;
+}
+
+.nav-h1 {
+  padding: 14.5px 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+.tag-link {
+  display: inline-block;
+  padding: 2px;
+  margin: 7px 3px;
+}
+
+.users {
+  border-left: 3px solid lightgray;
+  margin: 10px 0px;
+}
+

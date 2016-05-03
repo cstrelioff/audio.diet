@@ -1,0 +1,83 @@
+<template name="resourceList">
+  <div class="container">
+
+    {{#if verbose}}
+      {{#each resources}}
+        {{> resourceVerbose}}
+      {{/each}}
+    {{else}}
+      {{#each resources}}
+        {{> resourceMinimal}}
+      {{/each}}
+    {{/if}}
+
+  </div>
+</template>
+
+<template name="resourceItem">
+  <div class="container">
+
+    {{#with resource}}
+      {{> resourceVerbose}}
+    {{/with}}
+
+  </div>
+</template>
+
+<template name="resourceVerbose">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>{{name}}</h2>
+
+      <p>
+      <a href="/resource/{{_id}}" role="button" class="btn btn-primary btn-sm">
+        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> details
+      </a>
+      &nbsp;
+      <button type="button" class="btn btn-primary btn-sm">
+        <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> bookmark
+      </button>
+      </p>
+
+      <p>
+        <a href="{{url}}">{{url}}</a> -- resource added by
+        <a href="/user/{{createdBy.username}}">{{createdBy.username}}</a>
+      </p>
+
+      <p>{{description}}</p> 
+
+      <p>
+      {{#each tags}}
+        {{>tagLabel}}
+      {{/each}}
+      </p>
+
+    </div>
+  </div>
+</template>
+
+<template name="resourceMinimal">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>{{name}}</h2>
+
+      <p>
+      {{#each tags}}
+        {{>tagLabel}}
+      {{/each}}
+      </p>
+
+      <p>
+      <button type="button" class="btn btn-primary btn-sm">
+        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> details
+      </button>
+      &nbsp;
+      <button type="button" class="btn btn-primary btn-sm">
+        <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> bookmark
+      </button>
+      </p>
+
+
+    </div>
+  </div>
+</template>
