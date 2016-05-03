@@ -1,25 +1,7 @@
-<template name="navbar-root">
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed"
-                data-toggle="collapse" data-target="#navbar"
-                aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/"><strong>audio.diet</strong></a>
-      </div>
-      <div id="navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          {{> loginButtons}}
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div>
-  </nav>
-  
+<template name="navbarRoot">
+
+  {{> navbarTop}}
+
   <div class="container">
     <div class="nav-crumbs">
       <a class="nav-a" href="/">Home</a>
@@ -28,69 +10,46 @@
 </template>
 
 
-<template name="navbar-resource">
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed"
-                data-toggle="collapse" data-target="#navbar"
-                aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/"><strong>audio.diet</strong></a>
-      </div>
-      <div id="navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          {{> loginButtons}}
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div>
-  </nav>
-  
+<template name="navbarResource">
+
+  {{> navbarTop}}
+
   <div class="container">
     <div class="nav-crumbs">
       <a class="nav-a" href="/">Home</a> &raquo;
-      <a class="nav-a" href="/resource/{{resource._id}}"><span class="label label-default">resource</span> {{resource.name}}</a>
+      <a class="nav-a" href="/resource/{{resource._id}}">[resource] <strong>{{resource.name}}</strong></a>
     </div>
   </div>
 </template>
 
 
-<template name="navbar-tag">
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed"
-                data-toggle="collapse" data-target="#navbar"
-                aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/"><strong>audio.diet</strong></a>
-      </div>
-      <div id="navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          {{> loginButtons}}
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div>
-  </nav>
+<template name="navbarTag">
   
+  {{> navbarTop}}
+ 
   <div class="container">
     <div class="nav-crumbs">
       <a class="nav-a" href="/">Home</a> &raquo;
-      <a class="nav-a" href="/tag/{{slug}}"><span class="label label-default">tag</span> {{slug}}</a>
+      <a class="nav-a" href="/tag/{{slug}}">[tag] <strong>{{slug}}</strong></a>
     </div>
   </div>
 </template>
 
 
-<template name="navbar-user">
+<template name="navbarUser">
+
+  {{> navbarTop}}
+
+  <div class="container">
+    <div class="nav-crumbs">
+      <a class="nav-a" href="/">Home</a> &raquo;
+      <a class="nav-a" href="/user/{{username}}">[user] <strong>{{username}}</strong></a>
+    </div>
+  </div>
+</template>
+
+
+<template name="navbarTop">
   <nav class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
@@ -111,11 +70,4 @@
       </div><!--/.nav-collapse -->
     </div>
   </nav>
-  
-  <div class="container">
-    <div class="nav-crumbs">
-      <a class="nav-a" href="/">Home</a> &raquo;
-      <a class="nav-a" href="/user/{{username}}"><span class="label label-default">user</span> {{username}}</a>
-    </div>
-  </div>
 </template>
