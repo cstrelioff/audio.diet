@@ -27,30 +27,42 @@
 <template name="resourceVerbose">
   <div class="row">
     <div class="col-xs-12">
-      <h2>{{name}}</h2>
 
-      <p>
-      <a href="/resource/{{_id}}" role="button" class="btn btn-primary btn-sm">
-        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> details
-      </a>
-      &nbsp;
-      <button type="button" class="btn btn-primary btn-sm">
-        <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> bookmark
-      </button>
-      </p>
+      <div class="panel panel-default">
+        <div class="panel-heading">
 
-      <p>
-        <a href="{{url}}">{{url}}</a> -- resource added by
-        <a href="/user/{{createdBy.username}}">{{createdBy.username}}</a>
-      </p>
+          <strong>{{name}}</strong>
+          &nbsp;
+          <a href="#" class="js-toggle-bookmark">
+            <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> 3
+          </a>
 
-      <p>{{description}}</p> 
+        </div> <!-- end panel heading -->
+        <div class="panel-body">
 
-      <p>
-      {{#each tags}}
-        {{>tagLabel}}
-      {{/each}}
-      </p>
+          <p class="resource-info">
+            <a href="{{url}}">{{url}}</a>
+            &nbsp;
+            [added by
+             <a href="/user/{{createdBy.username}}">
+               <span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{createdBy.username}}
+             </a>]
+          </p>
+
+          <p class="resource-info">
+            {{description}}
+          </p>
+
+
+        </div> <!-- end panel body -->
+        <div class="panel-footer">
+
+          {{#each tags}}
+            {{>tagLabel}}
+          {{/each}}
+
+        </div><!-- end panel footer -->
+      </div> <!-- end panel -->
 
     </div>
   </div>
@@ -59,24 +71,32 @@
 <template name="resourceMinimal">
   <div class="row">
     <div class="col-xs-12">
-      <h2>{{name}}</h2>
 
-      <p>
-      {{#each tags}}
-        {{>tagLabel}}
-      {{/each}}
-      </p>
+      <div class="panel panel-default">
+        <div class="panel-heading">
 
-      <p>
-      <button type="button" class="btn btn-primary btn-sm">
-        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> details
-      </button>
-      &nbsp;
-      <button type="button" class="btn btn-primary btn-sm">
-        <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> bookmark
-      </button>
-      </p>
+          <strong><a href="/resource/{{_id}}">{{name}}</a></strong>
+          &nbsp;
+          <a href="#" class="js-toggle-bookmark">
+            <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> 3
+          </a>
 
+        </div> <!-- end panel heading -->
+        <div class="panel-body">
+
+          <p class="resource-info">
+            {{description}}
+          </p>
+
+        </div> <!-- end panel body -->
+        <div class="panel-footer">
+
+          {{#each tags}}
+            {{>tagLabel}}
+          {{/each}}
+
+        </div><!-- end panel footer -->
+      </div> <!-- end panel -->
 
     </div>
   </div>
