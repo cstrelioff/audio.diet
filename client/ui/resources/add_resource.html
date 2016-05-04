@@ -1,0 +1,20 @@
+<template name="resourceAdd">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        {{#autoForm
+          collection="Resources"
+          id="resourceAdd"
+          type="insert"}}
+          <fieldset>
+            {{> afQuickField name='name'}}
+            {{> afQuickField name='url'}}
+            {{> afQuickField name='description' rows=3}}
+            {{> afQuickField name='tags' type='text'}}
+          </fieldset>
+          <button type="submit" class="btn btn-primary">Insert</button>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>

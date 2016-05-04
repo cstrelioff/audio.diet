@@ -1,7 +1,6 @@
 accounts-base@1.2.2
 accounts-password@1.1.4
-ajduke:bootstrap-tagsinput@0.7.0
-aldeed:autoform@5.6.1
+aldeed:autoform@5.8.1
 aldeed:collection2@2.3.1
 aldeed:simple-schema@1.1.0
 anti:i18n@0.4.3
@@ -18,7 +17,6 @@ caching-compiler@1.0.0
 caching-html-compiler@1.0.2
 callback-hook@1.0.4
 check@1.1.0
-coffeescript@1.0.11
 ddp@1.2.2
 ddp-client@1.2.1
 ddp-common@1.2.2
@@ -90,4 +88,3 @@ underscore@1.0.4
 url@1.0.5
 webapp@1.2.3
 webapp-hashing@1.0.5
-yogiben:autoform-tags@0.2.0

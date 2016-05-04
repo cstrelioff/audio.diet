@@ -6,14 +6,14 @@
  * Distributed under terms of the MIT license.
  */
 
-Meteor.methods({
-  add_data: function(description) {
-    if (! Meteor.userId()) {
-      throw new Meteor.Error("Not authorized!");
-    }
-
-    FakeData.insert({description: description,
-                     createdBy: Meteor.user().username,
-                     createdAt: new Date()});
-  },
-});
+// Meteor.methods({
+//   add_resource: function(doc) {
+//     if (! Meteor.userId()) {
+//       throw new Meteor.Error("Not authorized!");
+//     }
+//     
+//     console.log('----call add_resource\n');
+//     console.log(doc)
+//     console.log('\n----');
+//   },
+// });
