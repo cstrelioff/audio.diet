@@ -7,10 +7,14 @@
           id="resourceAdd"
           type="insert"}}
           <fieldset>
-            {{> afQuickField name='name'}}
-            {{> afQuickField name='url'}}
-            {{> afQuickField name='description' rows=3}}
-            {{> afQuickField name='tags' type='text'}}
+            {{> afQuickField name='name'
+                placeholder='Name of Resource'}}
+            {{> afQuickField name='url'
+                placeholder='Valid url for resource'}}
+            {{> afQuickField name='description' rows=3
+                placeholder='Add a brief description of the resource here...'}}
+            {{> afQuickField name='tags' type='text'
+                placeholder='Add a comma-separated list of tags'}}
           </fieldset>
           <button type="submit" class="btn btn-primary">Insert</button>
         {{/autoForm}}
