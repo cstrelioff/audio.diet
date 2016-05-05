@@ -16,6 +16,26 @@
   </div>
 </template>
 
+
+<template name="notFoundResource">
+  {{> navbarTop}}
+
+  <div class="container">
+    <div class="nav-crumbs">
+      <a class="nav-a" href="/">Home</a> &raquo;
+      <a class="nav-a" href="#">[error] <strong>404, resource not found</strong></a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="not-found page jumbotron">
+      <h2>404</h2>
+      <p>Sorry, this resource doesn't seem to exist!</p>
+    </div>
+  </div>
+</template>
+
+
 <template name="notFoundUser">
   {{> navbarTop}}
 
