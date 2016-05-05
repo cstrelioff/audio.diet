@@ -9,10 +9,8 @@
 var resourceHooks = {
   before: {
     insert: function(doc) {
-      console.log('--before insert');
-
       // slug
-      doc.slug = doc.name.replace(/ /g, '-');
+      doc.slug = doc.name.replace(/[^a-z0-9]/gi, '-').toLowerCase();
 
       // createdOn
       doc.createdOn = new Date();
@@ -23,8 +21,6 @@ var resourceHooks = {
         doc.createdBy.id = Meteor.userId();
         doc.createdBy.username = Meteor.user().username;
       }
-      console.log('updated doc:');
-      console.log(doc);
 
       return doc;
     }
@@ -40,7 +36,8 @@ var resourceHooks = {
       if (data[0] === ' ') {
         data = data.slice(1);
       }
-      temp[index] = {name: data, slug: data.replace(/ /g, '-')};
+      temp[index] = {name: data,
+                     slug: data.replace(/[^a-z0-9]/gi, '-').toLowerCase()};
     });
 
     doc.tags = temp;
