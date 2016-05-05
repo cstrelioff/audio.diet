@@ -1,9 +1,17 @@
 <template name="notFound">
-  <div class="not-found page jumbotron">
-    <h2>404</h2>
-    <p>
-       Sorry, that tag or resource does not seem to exist. Please check your
-       url!
-     </p>
+  {{> navbarTop}}
+
+  <div class="container">
+    <div class="nav-crumbs">
+      <a class="nav-a" href="/">Home</a> &raquo;
+      <a class="nav-a" href="#">[error] <strong>404, not found</strong></a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="not-found page jumbotron">
+      <h2>404</h2>
+      <p>Sorry, this url doesn't make sense (to me)!</p>
+    </div>
   </div>
 </template>
