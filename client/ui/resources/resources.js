@@ -5,3 +5,10 @@
  *
  * Distributed under terms of the MIT license.
  */
+
+Template.resourceVerbose.helpers({
+  relative_date: function(date) {
+    console.log('date: ', date);
+    return moment(date).fromNow();
+  }
+});
