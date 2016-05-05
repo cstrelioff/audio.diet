@@ -77,10 +77,17 @@
         <a class="navbar-brand" href="/"><strong>audio.diet</strong></a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
+        {{#if currentUser}}
+        <ul class="nav navbar-nav">
+          <li><a href="/add-resource">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            Resource</a>
+          </li>
+        </ul>
+        {{else}}
+        <p class="navbar-text">Sign in to add resource...</p>
+        {{/if}}
         <ul class="nav navbar-nav navbar-right">
-          {{#if currentUser}}
-            <li><a href="/add-resource">Add Resource</a></li>
-          {{/if}}
           {{> loginButtons}}
         </ul>
       </div><!--/.nav-collapse -->
