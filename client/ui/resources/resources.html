@@ -1,11 +1,6 @@
 <template name="resourceList">
   <div class="container">
 
-    {{#each bookmarks}}
-      <p>res_id: {{resource_id}} user_id: {{user_id}}</p>
-    {{/each}}
-    <br/>
-
     {{#if verbose}}
       {{#each resources}}
         {{> resourceVerbose}}
@@ -35,18 +30,36 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+
           <h3 class="resource-h3">
             {{name}}
-            <a href="#" class="js-toggle-bookmark">
+            {{#if bookmarked}}
             <span class="glyphicon glyphicon-bookmark"></span>
-            </a>
+            {{/if}}
           </h3>
 
           <span class="label label-primary">
             <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
             &nbsp; bookmarks &nbsp;
-            <strong>35</strong>
+            <strong>{{bookmark_count}}</strong>
           </span>
+          &nbsp;
+
+          {{#if currentUser}}
+            {{#if bookmarked}}
+              <a href="#" class="js-toggle-bookmark">
+                remove bookmark
+              </a>
+            {{else}}
+              <a href="#" class="js-toggle-bookmark">
+                add bookmark
+              </a>
+            {{/if}}
+          {{else}}
+              <a href="#" class="disabled">
+                sign in to bookmark
+              </a>
+          {{/if}}
 
         </div> <!-- end panel heading -->
         <div class="panel-body">
@@ -91,18 +104,36 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+
           <h3 class="resource-h3">
             <a href="/resource/{{_id}}">{{name}}</a>
-            <a href="#" class="js-toggle-bookmark">
+            {{#if bookmarked}}
             <span class="glyphicon glyphicon-bookmark"></span>
-            </a>
+            {{/if}}
           </h3>
 
           <span class="label label-primary">
             <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
             &nbsp; bookmarks &nbsp;
-            <strong>35</strong>
+            <strong>{{bookmark_count}}</strong>
           </span>
+          &nbsp;
+
+          {{#if currentUser}}
+            {{#if bookmarked}}
+              <a href="#" class="js-toggle-bookmark">
+                remove bookmark
+              </a>
+            {{else}}
+              <a href="#" class="js-toggle-bookmark">
+                add bookmark
+              </a>
+            {{/if}}
+          {{else}}
+              <a href="#" class="disabled">
+                sign in to bookmark
+              </a>
+          {{/if}}
 
         </div> <!-- end panel heading -->
         <div class="panel-body">

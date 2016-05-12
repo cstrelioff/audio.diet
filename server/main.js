@@ -20,8 +20,8 @@ Meteor.publish('bookmarks', function() {
   return Bookmarks.find({});
 });
 
-Meteor.publish('bookmark.count', function(resource_id) {
-  return Bookmarks.find({'resource_id': resource_id}).count();
+Meteor.publish('bookmark.detail', function(resource_id) {
+  return Bookmarks.find({'resource_id': resource_id});
 });
 
 Meteor.publish('resource.detail', function(_id) {
