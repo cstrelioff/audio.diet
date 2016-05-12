@@ -14,5 +14,8 @@ Template.user.helpers({
     else {
       return false;
     }
+  },
+  relative_date: function(date) {
+    return moment(date).fromNow();
   }
 });

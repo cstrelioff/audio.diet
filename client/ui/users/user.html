@@ -1,10 +1,13 @@
 <template name="user">
 <div class="container">
   
-  <div class="row users">
+  <div class="row">
     <div class="col-xs-12">
-      <h4>{{username}}</h4>
-      <p>joined: <em>{{createdAt}}</em></p>
+      <h3>
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{username}}
+      </h3>
+
+      <p><strong>joined</strong> {{relative_date createdAt}}</p>
     </div>
   </div>
 

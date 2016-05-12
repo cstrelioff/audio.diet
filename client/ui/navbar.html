@@ -79,6 +79,10 @@
       <div id="navbar" class="collapse navbar-collapse">
         {{#if currentUser}}
         <ul class="nav navbar-nav">
+          <li><a href="/user/{{currentUser.username}}">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            Profile</a>
+          </li>
           <li><a href="/add-resource">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             Resource</a>
