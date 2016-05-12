@@ -16,6 +16,14 @@ Meteor.publish('user', function(username) {
   return Meteor.users.find({username: username});
 });
 
+Meteor.publish('bookmarks', function() {
+  return Bookmarks.find({});
+});
+
+Meteor.publish('bookmark.count', function(resource_id) {
+  return Bookmarks.find({'resource_id': resource_id}).count();
+});
+
 Meteor.publish('resource.detail', function(_id) {
   return Resources.find(_id);
 });

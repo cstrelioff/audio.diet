@@ -6,14 +6,20 @@
  * Distributed under terms of the MIT license.
  */
 
-// Meteor.methods({
-//   add_resource: function(doc) {
-//     if (! Meteor.userId()) {
-//       throw new Meteor.Error("Not authorized!");
-//     }
-//     
-//     console.log('----call add_resource\n');
-//     console.log(doc)
-//     console.log('\n----');
-//   },
-// });
+Meteor.methods({
+  toggle_bookmark: function(doc) {
+    if (! Meteor.userId()) {
+      throw new Meteor.Error("Not authorized!");
+    }
+
+    var doc_basics = {'user_id': doc.user_id, 'resource_id': doc.resource_id};
+    var bookmark_id = Bookmarks.findOne(doc_basics);
+
+    if (!bookmark_id) {
+      Bookmarks.insert(doc);
+    }
+    else {
+      Bookmarks.remove(bookmark_id);
+    }
+  },
+});

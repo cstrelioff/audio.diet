@@ -6,9 +6,35 @@
  * Distributed under terms of the MIT license.
  */
 
+//
+// resourceMinimal
+//
+Template.resourceMinimal.events({
+  'click .js-toggle-bookmark': function(date) {
+    var doc = {'user_id': Meteor.userId(),
+               'resource_id': this._id,
+               'createdOn': new Date()};
+
+    Meteor.call('toggle_bookmark', doc);
+  }
+});
+
+//
+// resourceVerbose
+//
+Template.resourceVerbose.events({
+  'click .js-toggle-bookmark': function(date) {
+    var doc = {'user_id': Meteor.userId(),
+               'resource_id': this._id,
+               'createdOn': new Date()};
+
+    Meteor.call('toggle_bookmark', doc);
+  }
+});
+
 Template.resourceVerbose.helpers({
   relative_date: function(date) {
-    console.log('date: ', date);
     return moment(date).fromNow();
   }
 });
+
