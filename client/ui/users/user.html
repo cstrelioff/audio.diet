@@ -4,10 +4,25 @@
   <div class="row">
     <div class="col-xs-12">
       <h3>
-        <span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{username}}
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{user.username}}
       </h3>
 
-      <p><strong>joined</strong> {{relative_date createdAt}}</p>
+      <p><strong>joined</strong> {{relative_date user.createdAt}}</p>
+    </div>
+  </div>
+
+  <h3>Resources added</h3>
+
+</div>
+
+  {{>resourceList}}
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>Bookmarks</h3>
+
     </div>
   </div>
 

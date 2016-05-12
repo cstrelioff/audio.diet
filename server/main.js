@@ -24,8 +24,16 @@ Meteor.publish('bookmark.detail', function(resource_id) {
   return Bookmarks.find({'resource_id': resource_id});
 });
 
+Meteor.publish('bookmark.user', function(user_id) {
+  return Bookmarks.find({'user_id': user_id});
+});
+
 Meteor.publish('resource.detail', function(_id) {
   return Resources.find(_id);
+});
+
+Meteor.publish('resource.user', function(username) {
+  return Resources.find({'createdBy.username': username});
 });
 
 Meteor.publish('resources', function() {
