@@ -15,16 +15,32 @@
 
 </div>
 
-  {{>resourceList}}
+  {{#if num_resources}}
+    {{>resourceList}}
+  {{else}}
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>
+        This user has not <strong>added any resources</strong>
+        to <a href="/">audio.diet</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+  {{/if}}
 
 <div class="container">
   <h3>Bookmarks</h3>
 
-  <div class="row">
-    <div class="col-xs-12">
-
-    </div>
-  </div>
+  {{#if num_bookmarks}}
+    {{>bookmarksList}}
+  {{else}}
+    <p>
+    This user has not <strong>bookmarked</strong> any resources on
+    <a href="/">audio.diet</a>.
+    </p>
+  {{/if}}
 
   {{#if is_loggedin_user}}
   <div class="row">
