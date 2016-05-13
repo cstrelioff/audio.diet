@@ -12,7 +12,9 @@
 Template.resourceMinimal.events({
   'click .js-toggle-bookmark': function(date) {
     var doc = {'user_id': Meteor.userId(),
+               'user_name': Meteor.user().username,
                'resource_id': this._id,
+               'resource_name': this.name,
                'createdOn': new Date()};
 
     Meteor.call('toggle_bookmark', doc);
@@ -25,7 +27,9 @@ Template.resourceMinimal.events({
 Template.resourceVerbose.events({
   'click .js-toggle-bookmark': function(date) {
     var doc = {'user_id': Meteor.userId(),
+               'user_name': Meteor.user().username,
                'resource_id': this._id,
+               'resource_name': this.name,
                'createdOn': new Date()};
 
     Meteor.call('toggle_bookmark', doc);
