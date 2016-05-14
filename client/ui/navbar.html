@@ -4,6 +4,10 @@
 
   <div class="container">
     <div class="nav-crumbs">
+      <a type="button" class="btn btn-primary btn-sm"
+         data-toggle="modal" data-target="#aboutModal">
+         <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+      </a> &nbsp;
       <a class="nav-a" href="/">Home</a>
     </div>
   </div>
@@ -16,6 +20,10 @@
 
   <div class="container">
     <div class="nav-crumbs">
+      <a type="button" class="btn btn-primary btn-sm"
+         data-toggle="modal" data-target="#aboutModal">
+         <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+      </a> &nbsp;
       <a class="nav-a" href="/">Home</a> &raquo;
       <a class="nav-a" href="/add-resource"><strong>add resource</strong></a>
     </div>
@@ -29,6 +37,10 @@
 
   <div class="container">
     <div class="nav-crumbs">
+      <a type="button" class="btn btn-primary btn-sm"
+         data-toggle="modal" data-target="#aboutModal">
+         <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+      </a> &nbsp;
       <a class="nav-a" href="/">Home</a> &raquo;
       <a class="nav-a" href="/resource/{{resource._id}}">[resource] <strong>{{resource.name}}</strong></a>
     </div>
@@ -42,6 +54,10 @@
  
   <div class="container">
     <div class="nav-crumbs">
+      <a type="button" class="btn btn-primary btn-sm"
+         data-toggle="modal" data-target="#aboutModal">
+         <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+      </a> &nbsp;
       <a class="nav-a" href="/">Home</a> &raquo;
       <a class="nav-a" href="/tag/{{slug}}">[tag] <strong>{{slug}}</strong></a>
     </div>
@@ -55,6 +71,10 @@
 
   <div class="container">
     <div class="nav-crumbs">
+      <a type="button" class="btn btn-primary btn-sm"
+         data-toggle="modal" data-target="#aboutModal">
+         <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+      </a> &nbsp;
       <a class="nav-a" href="/">Home</a> &raquo;
       <a class="nav-a" href="/user/{{user.username}}">[user] <strong>{{user.username}}</strong></a>
     </div>
@@ -97,4 +117,40 @@
       </div><!--/.nav-collapse -->
     </div>
   </nav>
+
+  <!-- site aboutModal -->
+  <div class="modal fade" id="aboutModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">audio.diet</h3>
+        </div>
+
+        <div class="modal-body">
+          <p><strong>audio.diet</strong> is a site that allows users to find
+             and share music/sound/noise-making tools. From software like pure
+             data, csound, and ableton live to diy electronics kits and other
+             fun hardware for masking music, the idea is to create a community
+             where it is easy and fun to share resources. Once you have created
+             as account, you can bookmark items that look, use the tagging
+             system to find similar resources and check out what other have
+             contributed or bookmarked. See how below!</p>
+
+          <h4>FAQ -- how do I do it?</h4>
+
+          <p>
+            to do...
+          </p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </template>
